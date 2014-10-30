@@ -1,15 +1,17 @@
-/*global Generator, Backbone, JST*/
+/*global BackboneTodo, Backbone, JST*/
 
 var app = app || {};
 
 (function () {
     'use strict';
 
-    app.App = Backbone.View.extend({
+    app.AppView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/app.ejs'],
 
-        tagName: 'div',
+        el: '#todoapp',
+
+        tagName: '',
 
         id: '',
 
@@ -20,8 +22,6 @@ var app = app || {};
           'click #clear-completed': 'clearCompleted',
           'click #toggle-all': 'toggleAllComplete'
         },
-
-        el: '#todoapp',
 
         statsTemplate: _.template( $('#stats-template').html() ),
 
@@ -93,7 +93,7 @@ var app = app || {};
         },
 
         createOnEnter: function( event ) {
-          if (event.which !== ENTER_KEY || !this.$input.val().trim() ) {
+          if (event.keyCode !== 13 || !this.$input.val().trim() ) {
             return;
           }
 

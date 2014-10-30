@@ -1,4 +1,6 @@
-/*global Router, $*/
+/*global BackboneTodo, $*/
+
+var app = app || {};
 
 window.Router = {
     Models: {},
@@ -7,15 +9,11 @@ window.Router = {
     Routers: {},
     init: function () {
         'use strict';
-        var app = app || {};
-        var ENTER_KEY = 13;
-        $(function() {
-          new app.AppView();
-        });
+        new app.AppView();
     }
 };
 
 $(document).ready(function () {
     'use strict';
-    Router.init();
+  //  BackboneTodo.init();//
 });

@@ -1,4 +1,4 @@
-/*global Generator, Backbone*/
+/*global BackboneTodo, Backbone*/
 
 var app = app || {};
 
@@ -9,7 +9,7 @@ var app = app || {};
 
         model: app.Todo,
 
-        url: 'http://tiny-pizza-server.herokuapp.com/collections/SWtodo',
+        url: 'https://tiny-pizza-server.herokuapp.com/collections/SWtodo',
 
         completed: function() {
           return this.filter(function( todo ) {

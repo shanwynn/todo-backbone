@@ -1,4 +1,4 @@
-/*global Generator, Backbone, JST*/
+/*global BackboneTodo, Backbone, JST*/
 
 var app = app || {};
 
@@ -6,8 +6,8 @@ var app = app || {};
     'use strict';
 
     app.TodoView = Backbone.View.extend({
-
         template: _.template( $('#item-template').html() ),
+     //template: JST['app/scripts/templates/todos.ejs'],//
 
         tagName: 'li',
 
@@ -46,8 +46,8 @@ var app = app || {};
           this.$el.removeClass('editing');
         },
 
-        updateOnEnter: function( e ) {
-          if (e.which === ENTER_KEY ) {
+        updateOnEnter: function( event ) {
+          if (event.keyCode === 13 ) {
             this.close();
           }
         }

@@ -1,11 +1,11 @@
-/*global Generator, Backbone, JST*/
+/*global BackboneTodo, Backbone, JST*/
 
-Generator.Views = Generator.Views || {};
+var app = app || {};
 
 (function () {
     'use strict';
 
-    Generator.Views.Todo = Backbone.View.extend({
+    app.Todo = Backbone.View.extend({
 
         template: JST['app/scripts/templates/todo.ejs'],
 
@@ -17,12 +17,14 @@ Generator.Views = Generator.Views || {};
 
         events: {},
 
-        initialize: function () {
+        initialize: function (model) {
+            this.model=model;
             this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
+            return this;
         }
 
     });

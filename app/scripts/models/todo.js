@@ -1,4 +1,4 @@
-/*global Generator, Backbone*/
+/*global BackboneTodo, Backbone*/
 
 var app = app || {};
 
@@ -7,10 +7,7 @@ var app = app || {};
 
     app.Todo = Backbone.Model.extend({
 
-        url: 'http://tiny-pizza-server.herokuapp.com/collections/SWtodo',
-
-        initialize: function() {
-        },
+        url: 'https://tiny-pizza-server.herokuapp.com/collections/SWtodo',
 
         defaults: {
           title: '',
