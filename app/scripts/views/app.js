@@ -93,7 +93,8 @@ var app = app || {};
         },
 
         createOnEnter: function( event ) {
-          if (event.keyCode !== 13 || !this.$input.val().trim() ) {
+          //if key hit is not enter key or the value of the input is empty do nothing
+          if (event.which !== app.ENTER_KEY || !this.$input.val().trim() ) {
             return;
           }
 

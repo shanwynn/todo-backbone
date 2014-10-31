@@ -1,19 +1,16 @@
 /*global BackboneTodo, $*/
 
 var app = app || {};
+app.ENTER_KEY = 13;
 
-window.Router = {
-    Models: {},
-    Collections: {},
-    Views: {},
-    Routers: {},
-    init: function () {
-        'use strict';
-        new app.AppView();
-    }
+
+app.init = function () {
+    'use strict';
+    console.log('Backbone is started');
+    new app.AppView();
 };
 
 $(document).ready(function () {
     'use strict';
-  //  BackboneTodo.init();//
+     app.init();
 });
